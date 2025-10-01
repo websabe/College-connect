@@ -135,64 +135,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-    // ===== زر العودة إلى الأعلى =====
-    const scrollToTopBtn = document.createElement('button');
-    scrollToTopBtn.innerHTML = '↑';
-    scrollToTopBtn.classList.add('scroll-to-top');
-    document.body.appendChild(scrollToTopBtn);
 
-    scrollToTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 500) {
-            scrollToTopBtn.style.opacity = '1';
-            scrollToTopBtn.style.visibility = 'visible';
-        } else {
-            scrollToTopBtn.style.opacity = '0';
-            scrollToTopBtn.style.visibility = 'hidden';
-        }
-    });
-});
 
-// ===== إضافة CSS لزر العودة إلى الأعلى =====
-const style = document.createElement('style');
-style.textContent = `
-    .scroll-to-top {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 50px;
-        height: 50px;
-        border: none;
-        border-radius: 50%;
-        background: linear-gradient(135deg, #D2A1FFFF, #363043FF);
-        color: white;
-        font-size: 20px;
-        cursor: pointer;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        z-index: 1000;
-        box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
-    }
-    
-    .scroll-to-top:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
-    }
-    
-    .ripple {
-        position: absolute;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.6);
-        transform: scale(0);
-        animation: ripple-animation 0.6s linear;
-    }
+
     
     @keyframes ripple-animation {
         to {
@@ -201,11 +147,7 @@ style.textContent = `
         }
     }
     
-    nav ul li a.active {
-        background: linear-gradient(135deg, #D2A1FFFF, #363043FF);
-        color: white;
-        border-color: #525252FF;
-    }
+
     
     /* تحسين تأثيرات البطاقات الحالية */
     .card {
@@ -219,5 +161,6 @@ document.head.appendChild(style);
 
 
     
+
 
 
